@@ -10,8 +10,10 @@ def set_numbers(array):
 n = int(input())
 for i in range(n):
     a,b = input().split()
-    set_a = set_numbers(a).sort()
-    set_b = set_numbers(b).sort()
+    set_a = set_numbers(a)
+    set_b = set_numbers(b)
+    set_a.sort()
+    set_b.sort()
     if set_a == set_b:
         print("YES")
     else:
