@@ -1,10 +1,20 @@
-# from math import pi
-pi = 3.1415
-x1, y1 = [int(x) for x in input().split()]
-x, y, r = [int(x) for x in input().split()]
-polovina_round = (pi*r*r) / 2
+import math
 
-h = ((x-x1)**2 + (y-y1)**2)**0.5
-s_street = h*r
+def gipotenuza(a, b):
+    return (a ** 2 + b ** 2) ** 0.5
 
-print(s_street+polovina_round)
+def distance(x1, y1, x2, y2):
+    return gipotenuza(x2 - x1, y2 - y1)
+
+x1, y1 = [float(x) for x in input().split()]
+x, y, r = [float(x) for x in input().split()]
+
+a = distance(x1, y1, x, y)
+if a > r:
+    b = gipotenuza(a, r)
+    alpha = math.asin(r / a)
+    s_triangles = r * a * math.cos(alpha)
+    s_sectors = r ** 2 * alpha
+    print(math.pi * r ** 2 / 2 + s_sectors + s_triangles)
+else:
+    print(math.pi * r ** 2)
