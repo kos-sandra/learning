@@ -1,0 +1,7 @@
+#Задача: В таблице Product найти модели, которые состоят только из цифр или только из латинских букв (A-Z, без учета регистра).
+Вывод: номер модели, тип модели.
+
+
+select distinct model, type from product
+WHERE model not LIKE '%[^a-zA-Z]%' or model not like '%[^0-9]%'
+

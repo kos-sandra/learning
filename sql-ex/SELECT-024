@@ -1,0 +1,20 @@
+#Задача: Перечислите номера моделей любых типов, имеющих самую высокую цену по всей имеющейся в базе данных продукции.
+
+
+With prices as (
+select model, price
+from PC
+union
+select model, price
+from Laptop
+union
+select model, price
+from Printer
+)
+select model
+from prices
+where price = (select max(price) from prices)
+
+
+
+

@@ -1,0 +1,16 @@
+#Задача: В предположении, что приход и расход денег на каждом пункте приема фиксируется не чаще одного раза в день [т.е. первичный ключ (пункт, дата)], написать запрос с выходными данными (пункт, дата, приход, расход). Использовать таблицы Income_o и Outcome_o.
+
+
+select income_o.point, income_o.date, income_o.inc, outcome_o.out from income_o
+left join outcome_o on outcome_o.point = income_o.point and outcome_o.date = income_o.date
+
+union
+
+select outcome_o.point, outcome_o.date, income_o.inc, outcome_o.out from outcome_o
+left join income_o on outcome_o.point = income_o.point and outcome_o.date = income_o.date
+
+order by income_o.point, income_o.date
+
+
+
+

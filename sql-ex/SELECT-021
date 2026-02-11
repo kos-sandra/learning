@@ -1,0 +1,17 @@
+#Задача: Найдите максимальную цену ПК, выпускаемых каждым производителем, у которого есть модели в таблице PC.
+Вывести: maker, максимальная цена.
+
+
+select distinct Pr.maker, max(PC.price) max_price
+from PC
+left join
+Product Pr on Pr.model = PC.model
+where Pr.type = 'PC'
+group by Pr.maker
+
+
+
+
+
+
+

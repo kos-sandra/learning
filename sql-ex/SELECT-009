@@ -1,0 +1,10 @@
+#Задача: Найдите производителей ПК с процессором не менее 450 Мгц. Вывести: Maker
+
+
+select distinct Product.maker
+from Product left join
+PC on Product.model = PC.model
+where Product.type = 'PC' and PC.speed >= '450'
+
+
+

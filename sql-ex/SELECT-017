@@ -1,0 +1,13 @@
+#Задача: Найдите модели ПК-блокнотов, скорость которых меньше скорости каждого из ПК.
+Вывести: type, model, speed
+
+
+select distinct Pr.type, L.model, L.speed
+from Product as Pr join
+Laptop as L on L.model = Pr.model
+where L.speed < (select min(speed) from PC)
+
+
+
+
+

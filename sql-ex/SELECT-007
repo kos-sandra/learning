@@ -1,0 +1,18 @@
+#Задача: Найдите номера моделей и цены всех имеющихся в продаже продуктов (любого типа) производителя B (латинская буква).
+
+
+select PC.model, PC.price
+from PC left join
+     Product on PC.model = Product.model
+where Product.maker = 'B'
+UNION
+select Laptop.model, Laptop.price
+from Laptop left join
+     Product on Laptop.model = Product.model
+where Product.maker = 'B'
+UNION
+select Printer.model, Printer.price
+from Printer left join
+     Product on Printer.model = Product.model
+where Product.maker = 'B'
+

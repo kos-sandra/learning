@@ -1,0 +1,9 @@
+#Задача: Найдите среднюю скорость ПК.
+
+
+select avg(speed) as speed
+from PC
+
+
+
+

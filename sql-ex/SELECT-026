@@ -1,0 +1,19 @@
+#Задача: Найдите среднюю цену ПК и ПК-блокнотов, выпущенных производителем A (латинская буква). Вывести: одна общая средняя цена.
+
+
+with a as
+(select price
+from laptop
+where model in (select model from Product where maker = 'A')
+union all
+select price
+from pc
+where model in (select model from Product where maker = 'A')
+)
+select avg(price) price
+from a
+
+
+
+
+

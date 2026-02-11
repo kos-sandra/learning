@@ -1,0 +1,15 @@
+#Задача: Найдите производителей, выпускающих по меньшей мере три различных модели ПК. Вывести: Maker, число моделей ПК.
+
+
+select distinct maker, count(model) model
+from Product
+where type='PC'
+group by maker
+having count(model) >=3
+
+
+
+
+
+
+

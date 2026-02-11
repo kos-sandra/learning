@@ -1,0 +1,15 @@
+#Задача: Найдите производителя, выпускающего ПК, но не ПК-блокноты.
+
+
+select distinct maker from Product
+where maker in
+(Select distinct maker
+from Product
+where type = 'PC')
+and
+maker not in
+(Select distinct maker
+from Product
+where type = 'Laptop')
+
+

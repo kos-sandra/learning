@@ -1,0 +1,6 @@
+#Задача: Найдите все записи таблицы Printer для цветных принтеров.
+
+
+select *
+from Printer
+where color = 'y'

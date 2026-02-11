@@ -1,0 +1,9 @@
+#Задача: Найдите модели принтеров, имеющих самую высокую цену. Вывести: model, price
+
+
+select distinct model, price
+from Printer
+where price = (select max(price) as price from Printer)
+
+
+

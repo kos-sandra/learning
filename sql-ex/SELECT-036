@@ -1,0 +1,13 @@
+#Задача: Перечислите названия головных кораблей, имеющихся в базе данных (учесть корабли в Outcomes).
+
+
+select name from (select s.name from classes c
+join ships s on c.class = s.class
+union
+select ship from outcomes) this_table
+where name in (select class from classes)
+
+
+
+
+

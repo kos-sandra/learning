@@ -1,0 +1,12 @@
+#Задача: Используя таблицу Product, определить количество производителей, выпускающих по одной модели.
+
+
+with count_model as (select count(model) as model from product
+group by maker)
+
+select sum(model) as qnty from count_model
+where model = 1
+
+
+
+

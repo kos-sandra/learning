@@ -1,0 +1,17 @@
+#Задача: Найдите пары моделей PC, имеющих одинаковые скорость и RAM. В результате каждая пара указывается только один раз, т.е. (i,j), но не (j,i), Порядок вывода: модель с большим номером, модель с меньшим номером, скорость и RAM.
+
+
+select distinct
+A.model AS model_1,
+B.model AS model_2,
+A.speed AS speed,
+A.ram AS ram
+from pc as a, pc as b
+where a.speed = b.speed and
+a.model <> b.model and
+a.ram = b.ram and
+a.model > b.model
+
+
+
+

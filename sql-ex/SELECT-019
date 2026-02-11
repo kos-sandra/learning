@@ -1,0 +1,16 @@
+#Задача: Для каждого производителя, имеющего модели в таблице Laptop, найдите средний размер экрана выпускаемых им ПК-блокнотов.
+Вывести: maker, средний размер экрана
+
+
+select Pr.maker, avg(L.screen) screen
+from Laptop L
+left join
+Product Pr on L.model = Pr.model
+group by Pr.maker
+
+
+
+
+
+
+
