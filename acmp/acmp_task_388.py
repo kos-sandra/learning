@@ -39,3 +39,11 @@ for i in range(n):
 #         if x == min_x and x == max_x:
 #             counter += 1
 print(counter)
+
+# p = map
+# i = lambda: (*p(int, input().split()),)
+# n, m = i()
+# a = [i() for j in range(n)]
+# b = *p(min, a),
+# c = p(max, zip(*a))
+# print(*(e == d for e in c for d in b))
