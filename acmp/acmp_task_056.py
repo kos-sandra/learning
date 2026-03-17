@@ -1,14 +1,9 @@
 n = int(input())
-friends_from = []
-
-for i in range(n):
-    friends_from.append(input())
+friends_from = [input() for _ in range(n)]
 
 m = int(input())
-friends_to = []
+friends_to = [input() for _ in range(m)]
 
-for i in range(m):
-    friends_to.append(input())
 
 friends_from.sort()
 friends_to.sort()
